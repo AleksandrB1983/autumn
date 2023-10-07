@@ -1,8 +1,9 @@
 package ru.netology.stats;
+
 public class StatsService {
     public long sum(long[] sales) {  // Находим сумму всех продаж за 12 месяцев
         long totalSale = 0;
-        for (long sale : sales){
+        for (long sale : sales) {
             totalSale += sale;
         }
 
@@ -10,13 +11,14 @@ public class StatsService {
 
 
     }
+
     public long averageSale(long[] sales) {  //  Находим среднюю сумму продаж за месяц
         long totalSale = 0;
-        for (long sale : sales){
+        for (long sale : sales) {
             totalSale += sale;
         }
         long averageSale;
-         averageSale = totalSale / 12;
+        averageSale = totalSale / 12;
 
         return averageSale;
     }
@@ -30,7 +32,7 @@ public class StatsService {
 
         }
 
-        return maxMonth +1;  //  месяца нумеруются с 1, а индексы массива с 0, нужно сдвинуть ответ на 1
+        return maxMonth + 1;  //  месяца нумеруются с 1, а индексы массива с 0, нужно сдвинуть ответ на 1
 
     }
 
@@ -43,14 +45,15 @@ public class StatsService {
 
         }
 
-        return minMonth +1;  //  месяца нумеруются с 1, а индексы массива с 0, нужно сдвинуть ответ на 1
+        return minMonth + 1;  //  месяца нумеруются с 1, а индексы массива с 0, нужно сдвинуть ответ на 1
 
     }
+
     public long monthsBelowAverage(long[] sales) {  // Находим количество месяцев с продажей ниже среднего
         int counter = 0; // счётчик количество месяцев с продажами ниже среднего
         long average = averageSale(sales);
         for (long sale : sales) {
-            if(sale < average) {  // Если месячная продажа оказалась ниже среднего значения,
+            if (sale < average) {  // Если месячная продажа оказалась ниже среднего значения,
                 counter++;        // то этот месяц добавляем в счётчик
             }
 
@@ -58,11 +61,12 @@ public class StatsService {
         return counter;
 
     }
+
     public long monthsAboveAverage(long[] sales) {  // Находим количество месяцев с продажами выше среднего значения
         int counter = 0;
         long average = averageSale(sales);
         for (long sale : sales) {
-            if(sale > average) {  // Если месячная продажа оказалась выше среднего значения,
+            if (sale > average) {  // Если месячная продажа оказалась выше среднего значения,
                 counter++;        // то этот месяц добавляем в счётчик
 
             }
